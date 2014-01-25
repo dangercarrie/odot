@@ -3,12 +3,6 @@ require 'spec_helper'
 describe "Viewing todo items" do
 	let!(:todo_list) { todo_list = TodoList.create(title: "Groceries", description: "Grocery List") }
 	
-	def visit_todo_list(list)
-	  visit "/todo_lists"	
-		within "#todo_list_#{list.id}" do
-			click_link "List Items"
-		end
-	end
 
 	it "should display todo list title" do
 		visit_todo_list(todo_list)
